@@ -3,7 +3,7 @@ from openpyxl import Workbook
 from openpyxl.styles import Alignment, PatternFill
 
 # Caminho para o arquivo PDF
-pdf_path = "Relatório de Diagnóstico Mind The Bizz 2022.1.pdf"
+pdf_path = "_Relatório Diagnóstico_Incubação Jump 2022..pdf"
 
 # Extrai o texto de todas as páginas do arquivo PDF
 text = extract_text(pdf_path)
@@ -45,14 +45,14 @@ for page_num, page in enumerate(pages, start=1):
     # Verificar se é uma página subsequente para remover as primeiras frases
     if page_num >= 2:
         
-        lines = page.split('\n')[8:]  # Remove as primeiras linhas
+        lines = page.split('\n')[6:]  # Remove as primeiras linhas
     else:
         lines = page.split('\n')
     phrases = [
         "Nome do Projeto",
         "Segmento de atuação",
-        "Responsável 1 | Profissão | E-mail | Telefone",
-        "Responsável 2 | Profissão | E-mail | Telefone",
+        "Responsável 1 | Profissão | Telefone | E-mail",
+        "Responsável 2 | Profissão | Telefone | E-mail",
         "Local de origem",
         "Nível de maturidade do projeto",
         "Ideação",
